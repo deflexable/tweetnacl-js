@@ -86,7 +86,7 @@ declare namespace nacl {
     }
 }
 
-declare interface nacl {
+declare interface nacl_core {
     randomBytes(n: number): Uint8Array;
     secretbox: nacl.secretbox;
     scalarMult: nacl.scalarMult;
@@ -95,4 +95,8 @@ declare interface nacl {
     hash: nacl.hash;
     verify(x: Uint8Array, y: Uint8Array): boolean;
     setPRNG(fn: (x: Uint8Array, n: number) => void): void;
+}
+
+declare interface nacl extends nacl_core {
+    NACL: (object: any) => nacl_core;
 }

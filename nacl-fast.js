@@ -1,4 +1,4 @@
-(function(nacl) {
+function NACL(nacl) {
 'use strict';
 
 // Ported in 2014 by Dmitry Chestnykh and Devi Mandiri.
@@ -2388,4 +2388,10 @@ nacl.setPRNG = function(fn) {
   }
 })();
 
-})(typeof module !== 'undefined' && module.exports ? module.exports : (self.nacl = self.nacl || {}));
+}
+
+NACL(typeof module !== 'undefined' && module.exports ? module.exports : (self.nacl = self.nacl || {}));
+
+if(typeof module !== 'undefined' && module.exports) {
+  module.exports.NACL = NACL;
+}
