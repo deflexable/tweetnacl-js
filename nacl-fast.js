@@ -2388,10 +2388,7 @@ nacl.setPRNG = function(fn) {
   }
 })();
 
+nacl.NACL = NACL;
 }
 
 NACL(typeof module !== 'undefined' && module.exports ? module.exports : (self.nacl = self.nacl || {}));
-
-if(typeof module !== 'undefined' && module.exports) {
-  module.exports.NACL = NACL;
-}
